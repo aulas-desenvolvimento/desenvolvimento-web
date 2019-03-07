@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulário de validação</title>
+	 <meta charset="UTF-8"> 
+
+	 <script type="text/javascript">
+	 	
+	 	function validateForm() {
+		  if (document.getElementById("nome").value == "" || 
+		  	document.getElementById("sobrenome").value == "" ||
+		  	document.getElementById("data-nascimento").value == "" ||
+		  	document.getElementById("rg").value == "" ||
+		  	document.getElementById("cpf").value == "" ||
+		  	document.getElementById("endereco").value == ""
+		  	) {
+		    alert("Por favor, preencha todos os campos");
+		    return false;
+		  }
+
+
+		}
+
+
+	 </script>
+
+</head>
+<body>
+
+	<form id="form" method="GET" action="index.html" onsubmit="return validateForm()" >
+		
+		<div>
+			<label>Nome: </label>
+			<input type="text" id="nome" name="nome" />
+		</div>
+
+		<div>
+			<label>Sobrenome: </label>
+			<input type="text" id="sobrenome" name="sobrenome" />
+		</div>
+
+		<div>
+			<label>Data Nascimento: </label>
+			<input type="date" id="data-nascimento" name="data-nascimento" />
+		</div>
+
+
+		<div>
+			<label>RG: </label>
+			<input type="text" id="rg" name="rg" />
+		</div>
+		
+		<div>
+			<label>CPF: </label>
+			<input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"/>
+		</div>
+		
+		<div>
+			<label>Endereço Completo: </label>
+			<input type="text" id="endereco" name="endereco"   />
+		</div>
+
+
+		<div>
+			<input type="reset" value="Reset">
+  			<input type="submit" value="Submit">
+
+		</div>
+
+
+	</form>
+
+
+
+</body>
+
+
+<!--index.html?nome=Jerffeson&sobrenome=Gomes&data-nascimento=1995-05-15&rg=20000000&cpf=00000000000&endereco=Natal%2C+RN -->
+
+</html>
