@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p><button onclick="myMove(1)">Cima</button></p> 
+
+<div>
+  <button onclick="myMove(2)" style="float:left">Esquerda</button>
+
+  <div id ="container" style="float:left">
+      
+      <div id ="animate" style="left: 0;top: 0;right: 0;bottom: 0;"></div></p> 
+    
+  </div>
+
+  <button onclick="myMove(3)">Direita</button>
+</div>
+
+<div style="clear:both"><button onclick="myMove(4)">Baixo</button></div> 
+
+
+<div id="posicao">
+</div>
+
+<script>
+
+  var cima = 0;
+  var esquerda = 0;
+function myMove(movimento) {
+
+  var elem = document.getElementById("animate");   
+  var id = setInterval(frame, 5);
+
+  function frame() {
+
+        if(movimento == 1) {
+
+          if (cima >= 0) {
+            cima--;
+            elem.style.top = cima + "px";
+          } else {
+            clearInterval(id);
+          }
+
+        } else if (movimento == 2) {
+
+          if(esquerda >= 0) {
+            esquerda--;
+            elem.style.left = esquerda+ "px";
+          } else {
+            clearInterval(id);
+          }
+
+        } else if (movimento == 3){
+
+          if (esquerda < 350) {
+            esquerda++;
+            elem.style.left = esquerda+ "px";
+          } else {
+            clearInterval(id);
+          }
+
+        } else {
+
+          if (cima < 350) {
+            cima++;
+            elem.style.top = cima+ "px";
+          } else {
+            clearInterval(id);
+          }
+
+        }
+
+        document.getElementById("posicao").innerHTML = "Topo: " + elem.style.top + "<br />" + 
+    "Esqueda: " + elem.style.left + "<br />" + 
+    "Direita: " + elem.style.right + "<br />" + 
+    "Baixo: " + elem.style.bottom + "<br />" ;
+
+
+    }
+
+    
+}
+
+</script>
+
+</body>
+</html>
