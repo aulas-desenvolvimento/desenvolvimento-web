@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projetos</title>
+
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/dolist.js"></script>
+
+	<style type="text/css">
+		
+		.atividade {
+			margin-bottom: 10px;
+			padding: 5px;
+			border-radius: 5px;
+		}
+
+		.data-responsavel {
+			font-size: 10px;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+
+	</script>
+
+
+</head>
+<body class="container-fluid">
+
+	<header class="d-flex bd-highlight p-2 border row">
+		<div class="p-2 flex-fill bd-highlight "><i class="fas fa-project-diagram"></i> SisProj - Nova forma de ver seus projetos</div>
+		<div class="p-2 flex-fill bd-highlight "><h2>Projetos</h2></div>
+		<div class="p-2 flex-fill bd-highlight text-right">
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddProjeto">
+			  <i class="fas fa-plus"></i> Adicionar
+			</button>
+		</div>
+	</header>
+
+	<section class="border row ml-1 mr-1" id="projetos">
+		
+		<div class="col-12">
+			<dir class="row d-flex justify-content-center" id="list-projetos">
+				
+
+
+			</dir>
+			
+		</div>
+
+	</section>
+
+	<section class="border row ml-1 mr-1 p-3" id=tab-atividades>
+
+		<div class="col-12 d-flex bd-highlight p-2 border">
+			<div class="p-2 flex-fill bd-highlight ">
+				<h4>Projeto 1</h4>	
+			</div>
+			<div class="p-2 flex-fill bd-highlight text-right">
+				<a class="btn btn-primary" href="#"><i class="fas fa-plus"></i> Atividade </a>
+			</div>
+			
+		</div>
+
+		<div class="col-12">
+			
+			<div class="row d-flex">
+
+				<div class="col-lg-4 col-md-6">
+					<div class="m-4 border border-blue rounded" style="min-width: 400px; max-width: 400px;">
+						<div class="card-body">
+							
+							<div class="row" >
+								<header class="col-12 p-0">
+									<h5 class="card-title col-7">A fazer</h5>
+								</header>
+							</div>
+
+							<div id="list-afazer">
+								<div class="row border atividade">
+									<div class="col-12" >
+										<header class="row p-0">
+											<span clas="titulo-tarefa">Add coisa no Sigaa</span>
+
+											<div class="col-5 p-0 text-right">
+												<a href="#" class="p-1"><i class="fas fa-edit"></i></a>
+												<a href="#" class="p-1"><i class="fas fa-trash-alt text-danger"></i></a>
+											</div>
+											
+										</header>
+
+										<div class="row text-secondary data-responsavel">
+											31/03/2019 - Jerffeson Gomes
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="m-4 border border-blue rounded" style="min-width: 400px; max-width: 400px;">
+						<div class="card-body">
+							<div class="row" >
+								<header class="col-12 p-0">
+									<h5 class="card-title col-7">Fazendo</h5>
+								</header>
+							</div>
+
+							<div id="list-afazer">
+								<div class="row border atividade">
+									<div class="col-12" >
+										<header class="row p-0">
+											<span clas="titulo-tarefa">Add coisa no Sigaa</span>
+
+											<div class="col-5 p-0 text-right">
+												<a href="#" class="p-1"><i class="fas fa-edit"></i></a>
+												<a href="#" class="p-1"><i class="fas fa-trash-alt text-danger"></i></a>
+											</div>
+											
+										</header>
+
+										<div class="row text-secondary data-responsavel">
+											31/03/2019 - Jerffeson Gomes
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="m-4 border border-blue rounded" style="min-width: 400px; max-width: 400px;">
+						<div class="card-body">
+							
+							<div class="row" >
+								<header class="col-12 p-0">
+									<h5 class="card-title col-7">Feita</h5>
+								</header>
+							</div>
+
+							<div id="list-afazer">
+								<div class="row border atividade">
+									<div class="col-12" >
+										<header class="row p-0">
+											<span clas="titulo-tarefa">Add coisa no Sigaa</span>
+
+											<div class="col-5 p-0 text-right">
+												<a href="#" class="p-1"><i class="fas fa-edit"></i></a>
+												<a href="#" class="p-1"><i class="fas fa-trash-alt text-danger"></i></a>
+											</div>
+											
+										</header>
+
+										<div class="row text-secondary data-responsavel">
+											31/03/2019 - Jerffeson Gomes
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="modalAddProjeto" tabindex="-1" role="dialog" aria-labelledby="modalAddProjetoTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-scrollable" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="modalAddProjetoTitle">Adicionar Projeto</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	
+		      	<form onsubmit="addProjeto()" id="form-add-projeto">
+					<div class="form-group row">
+						<label for="nome-projeto" class="ccol-2 ol-form-label">Nome:</label>
+						<div class="col-sm-10">
+							<input type="text" class=" form-control" id="nome-projeto">
+						</div>
+					</div>
+					<button type="submit">Salvar</button>
+				</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</section>
+</body>
+</html>
