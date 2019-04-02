@@ -58,10 +58,10 @@
 
 		<div class="col-12 d-flex bd-highlight p-2 border">
 			<div class="p-2 flex-fill bd-highlight ">
-				<h4>Projeto 1</h4>	
+				<h4 id="titulo-nome-projeto">Projeto 1</h4>	
 			</div>
 			<div class="p-2 flex-fill bd-highlight text-right">
-				<a class="btn btn-primary" href="#"><i class="fas fa-plus"></i> Atividade </a>
+				<button class="btn btn-primary" href="#" data-toggle="modal" data-target="#modalAddAtividade" ><i class="fas fa-plus"></i> Atividade </button>
 			</div>
 			
 		</div>
@@ -80,24 +80,8 @@
 								</header>
 							</div>
 
-							<div id="list-afazer">
-								<div class="row border atividade">
-									<div class="col-12" >
-										<header class="row p-0">
-											<span clas="titulo-tarefa">Add coisa no Sigaa</span>
+							<div id="list-afazer" ondrop="drop(event, this)" ondragover="allowDrop(event)" class="p-3">
 
-											<div class="col-5 p-0 text-right">
-												<a href="#" class="p-1"><i class="fas fa-edit"></i></a>
-												<a href="#" class="p-1"><i class="fas fa-trash-alt text-danger"></i></a>
-											</div>
-											
-										</header>
-
-										<div class="row text-secondary data-responsavel">
-											31/03/2019 - Jerffeson Gomes
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -112,24 +96,8 @@
 								</header>
 							</div>
 
-							<div id="list-afazer">
-								<div class="row border atividade">
-									<div class="col-12" >
-										<header class="row p-0">
-											<span clas="titulo-tarefa">Add coisa no Sigaa</span>
-
-											<div class="col-5 p-0 text-right">
-												<a href="#" class="p-1"><i class="fas fa-edit"></i></a>
-												<a href="#" class="p-1"><i class="fas fa-trash-alt text-danger"></i></a>
-											</div>
-											
-										</header>
-
-										<div class="row text-secondary data-responsavel">
-											31/03/2019 - Jerffeson Gomes
-										</div>
-									</div>
-								</div>
+							<div id="list-fazendo" ondrop="drop(event, this)" ondragover="allowDrop(event)" class="p-3" >
+								
 							</div>
 						</div>
 					</div>
@@ -145,24 +113,8 @@
 								</header>
 							</div>
 
-							<div id="list-afazer">
-								<div class="row border atividade">
-									<div class="col-12" >
-										<header class="row p-0">
-											<span clas="titulo-tarefa">Add coisa no Sigaa</span>
+							<div id="list-feita" ondrop="drop(event, this)" ondragover="allowDrop(event)" class="p-3">
 
-											<div class="col-5 p-0 text-right">
-												<a href="#" class="p-1"><i class="fas fa-edit"></i></a>
-												<a href="#" class="p-1"><i class="fas fa-trash-alt text-danger"></i></a>
-											</div>
-											
-										</header>
-
-										<div class="row text-secondary data-responsavel">
-											31/03/2019 - Jerffeson Gomes
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -171,7 +123,7 @@
 		</div>
 
 
-		<!-- Modal -->
+		<!-- Modal Projetos -->
 		<div class="modal fade" id="modalAddProjeto" tabindex="-1" role="dialog" aria-labelledby="modalAddProjetoTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-scrollable" role="document">
 		    <div class="modal-content">
@@ -183,15 +135,59 @@
 		      </div>
 		      <div class="modal-body">
 		      	
-		      	<form onsubmit="addProjeto()" id="form-add-projeto">
+		      	<form  id="form-add-projeto">
+		      		<input type="hidden"  class="form-control" id="index-projeto" readonly>
 					<div class="form-group row">
-						<input type="hidden"  class="form-control" id="index-projeto" readonly>
 						<label for="nome-projeto" class="ccol-2 ol-form-label">Nome:</label>
 						<div class="col-sm-10">
 							<input type="text" class=" form-control" id="nome-projeto">
 						</div>
 					</div>
-					<button class="btn btn-primary" type="submit">Salvar</button>
+					<button class="btn btn-primary" onclick="addProjeto()" type="button">Salvar</button>
+				</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+		<!-- Modal Atividades -->
+		<div class="modal fade" id="modalAddAtividade" tabindex="-1" role="dialog" aria-labelledby="modalAddAtividadeTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-scrollable" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="modalAddAtividadeTitle">Adicionar Atividdes</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	
+		      	<form  id="form-add-projeto">
+		      		<input type="hidden"  class="form-control" id="index-atividade" readonly>
+		      		<input type="hidden"  class="form-control" id="situacao-atividade" readonly>
+					<div class="form-group row">
+						<input type="hidden"  class="form-control" id="index-projeto" readonly>
+						<label for="nome-projeto" class="ccol-2 ol-form-label">Titulo:</label>
+						<div class="col-sm-10">
+							<input type="text" class=" form-control" id="input-titulo-atividade">
+						</div>
+					</div>
+					<div class="form-group row">
+						<input type="hidden"  class="form-control" id="index-projeto" readonly>
+						<label for="nome-projeto" class="ccol-2 ol-form-label">Responsavel:</label>
+						<div class="col-sm-10">
+							<input type="text" class=" form-control" id="input-responsavel-atividade">
+						</div>
+					</div>
+					<div class="form-group row">
+						<input type="hidden"  class="form-control" id="index-projeto" readonly>
+						<label for="nome-projeto" class="ccol-2 ol-form-label">Pazo:</label>
+						<div class="col-sm-10">
+							<input type="date" class=" form-control" id="input-prazo-atividade">
+						</div>
+					</div>
+					<button class="btn btn-primary" onclick="addAtividade()" type="button">Salvar</button>
 				</form>
 		      </div>
 		    </div>
